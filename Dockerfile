@@ -8,5 +8,4 @@
  ENV RESOLUTION 1707x1067
  
 #Start the command to run NoVNC
-
  CIND ["supervisord", "-c", "/etc/supervisor/supervisord.conf"
