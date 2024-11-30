@@ -1,11 +1,1 @@
-# Use the base image 
-FROM fredblgr/ubuntu-novnc: 20.04
- 
- # Expose the port on which NoVNC runs (80 inside the container)
-EXPOSE 80
-
- #Set the environment variable for screen resolution
-ENV RESOLUTION 1707x1067
- 
-#Start the command to run NoVNC
-CIND ["supervisord", "-c", "/etc/supervisor/supervisord.conf"
+FROM ubuntu:latest RUN apt-get update && apt-get install -y xrdp RUN systemctl enable xrdp EXPOSE 3389 CMD ["xrdp"]
